@@ -1,0 +1,19 @@
+{
+  "scenarioKinds": [
+    {
+      "id": "primary",
+      "name": "Primary",
+      "description": "Established successful result or meaningful alternative result."
+    },
+    {
+      "id": "validation",
+      "name": "Validation",
+      "description": "Observable refusal of an invalid request or unmet condition."
+    },
+    {
+      "id": "edge",
+      "name": "Edge",
+      "description": "Conflict, unavailable dependency, unattended outcome or unconfirmed result."
+    }
+  ]
+}

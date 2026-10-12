@@ -1,0 +1,92 @@
+---
+{
+  "kind": "primary",
+  "routes": {
+    "ro": "Ro entry",
+    "co": "Co entry",
+    "so": "So entry"
+  },
+  "steps": [
+    {
+      "text": "Request the selected public-joining configuration, parent version, resource limits and current usage.",
+      "kind": "actor",
+      "actor": "ai-agent",
+      "entities": [],
+      "contexts": {
+        "ro": {
+          "place": "rest-api::administration"
+        },
+        "co": {
+          "place": "public-cli::administration"
+        },
+        "so": {
+          "place": "agent-skills::administration"
+        }
+      }
+    },
+    {
+      "text": "Policy、限额、当前使用量",
+      "kind": "product",
+      "entities": [
+        {
+          "entity": "public-join-policy",
+          "effect": "reads",
+          "facts": [
+            "Project",
+            "Public identity",
+            "Summary",
+            "Allowed roles",
+            "Enabled at",
+            "Disabled at",
+            "Policy version",
+            "Project version",
+            "Issue limit",
+            "Comment limit",
+            "Principal limit",
+            "Current usage"
+          ]
+        }
+      ],
+      "contexts": {
+        "ro": {
+          "place": "rest-api::administration"
+        },
+        "co": {
+          "place": "public-cli::administration"
+        },
+        "so": {
+          "place": "agent-skills::administration"
+        }
+      },
+      "actor": "ai-agent"
+    }
+  ],
+  "references": [
+    {
+      "kind": "code",
+      "role": "implementation",
+      "target": "apps/worker/src/services/public-join.ts"
+    },
+    {
+      "kind": "code",
+      "role": "implementation",
+      "target": "packages/cli/src/catalog.mjs"
+    }
+  ]
+}
+---
+
+# Read public join policy agent primary
+
+## Trigger
+
+Request the selected public-joining configuration, parent version, resource limits and current usage.
+
+## Outcome
+
+Policy、限额、当前使用量
+
+## Edge cases
+
+- A structured refusal returns no successful write or protected result; it does not undo any earlier confirmed atomic operation.
+- Public summaries provide no anonymous Board access. Enabled roles and effective capacity are checked atomically. Existing Writer is not downgraded and revoked direct access may be regranted.
