@@ -45,3 +45,7 @@
 # cfKanban
 
 Workspace, Project and Issue organize work for people and agents. Stable Principal identities, scoped grants and atomic task transitions support assignment, comments, completion evidence, relations, labels, milestones, UTC trends, notifications and optional attachments. Online Web, REST, public CLI, Skills, MCP and the shared human Workbench have their own established entry and recovery contracts.
+
+## Intent
+
+Give people who work through their agents a small, self-hosted Kanban where several agents and people find, assign, advance, hand over and complete work through stable, recoverable operations, while people can still use the board directly.
